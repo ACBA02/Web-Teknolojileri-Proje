@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr-TR">
 <head>
+<style>
 #uyelik_formu
 {
     padding: 10px;
@@ -12,10 +13,19 @@ label
     float: left;
     width: 150px;
 }
-
 </style>
 </head>
 <body>
-
+<div id="uyelik_formu">
+    <form name="uye_formu" action="KullaniciGirisKontrol.php" method="post">
+        <label>Kullanici Adi:</label>
+        <input type="text" name="kullaniciadi" required>
+        <br><br>
+        <label>Sifre:</label>
+        <input type="password" name="sifre" required>
+        <br>
+        <input type="submit" value="Giris!">
+    </form>
+</div>
 </body>
 </html>
