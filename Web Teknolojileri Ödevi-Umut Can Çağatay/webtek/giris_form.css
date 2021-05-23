@@ -1,0 +1,11 @@
+#giris_formu
+{
+    padding: 10px;
+    width: 400px;
+    border: 1px solid black;
+}  
+label
+{          
+    float: left;
+    width: 150px;
+}

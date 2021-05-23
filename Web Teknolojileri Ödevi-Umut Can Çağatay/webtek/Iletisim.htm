@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<title>
+Web Teknolojileri Proje
+</title>
+<link rel="stylesheet"type="text/css"href="genel.css">
+<link rel="stylesheet"type="text/css"href="giris_form.css">
+
+</head>
+
+<body>
+
+<script>
+	function isValid(frm)
+{
+    var adsoyad = frm.adsoyad.value;
+    var telefon = frm.telefon.value;
+    var email = frm.email.value;
+    var atpos=email.indexOf("@");
+    var dotpos=email.lastIndexOf(".");
+    if ( adsoyad==null || adsoyad=="" || adsoyad.length < 4 )
+    {
+        alert("İsim Soyisim 4 karakterden az olamaz");
+        return false;
+    }
+    if ( telefon == null || telefon == "" || telefon.length != 10)
+    {
+        alert("Telefon numarasını boş bırakmayınız ya da geçerli bir telefon numarası giriniz");
+        return false;
+    }
+    if ( atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length )
+    {
+        alert("Geçerli email adresi girin");
+        return false;
+    }      
+    return true;
+}
+</script>
+
+<div class="ustmenu">
+ <header> 
+	<h1>Umut Can Çağatay - Web Teknolojileri Proje</h1>
+ </header>
+ <nav>
+	<ul>
+		<li><a href="Hakkinda.htm">Hakkında</a></li>
+		<li><a href="OzGecmis.htm">ÖzGeçmiş</a></li>
+		<li><a href="Sehrim.htm">Şehrim</a></li>
+		<li><a href="Mirasimiz.htm">Mirasımız</a></li>
+		<li><a href="Iletisim.htm">İletişim</a></li>
+		<li><a href="IlgiAlanlarim.htm">İlgi Alanlarım</a></li>
+	</ul>
+ </nav>
+ <br>
+</div>
+<div class="altmenu">
+	<h1>İletişim</h1>
+
+	<div id="giris_formu">
+    <form name="uye_formu" action="jscript_form_kontrolu_post.php" onsubmit="return isValid(this)" method="post">
+        <label>İsim Soyisim:</label>
+        <input type="text" name="adsoyad">
+        <br>
+        <label>Telefon:</label>
+        <input type="text" name="telefon">
+        <br>
+        <label>E-Mail:</label>
+        <input type="text" name="email">
+        <br>
+        <input type="submit" value="Gönder!">
+    </form>
+</div>
+
+	<br>
+</div>	
+
+<div class="copyright"> Copyright @Umut Can ÇAĞATAY </div>
+
+</body>
+
+</html>
